@@ -60,15 +60,13 @@ function ScrollingEmojis({ delay }: { delay: number }) {
     <motion.div className=" right-1/2 emojis absolute z-10 w-screen  text-center h-screen">
       {Arr.map((mood, index) => {
         let x = RandomX();
-        const [xValue, setXValue] = useState(x);
         let y = RandomY();
-        const [yValue, setYValue] = useState(y);
         return (
           <motion.h3
             key={index}
-            initial={{ x: xValue * 2, y: yValue }}
+            initial={{ x: x * 2, y: y }}
             animate={{
-              y: [(-window.innerHeight * 10 * index) / 10 - 100, yValue + 550],
+              y: [(-window.innerHeight * 10 * index) / 10 - 100, y + 550],
             }}
             transition={{
               duration: 10 + index * 0.05,

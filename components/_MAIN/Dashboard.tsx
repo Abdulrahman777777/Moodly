@@ -17,7 +17,7 @@ function Dashboard({ email }: { email: string }) {
       <section>
         <div className="cont h-screen w-screen flex flex-col justify-center items-center ">
           <h1 className="font-semibold text-3xl text-red-600 dark:text-red-">
-            On Average You've been {data.text} for the last
+            On Average You{"'"}ve been {data.text} for the last
             {data.IndArr.length > 1 ? ` ${data.IndArr.length} days` : " day"}.
           </h1>
           <h2 className="fixed -z-20 text-8xl">{data.Emo}</h2>

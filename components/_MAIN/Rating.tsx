@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Mood from "../_MAIN/Moods";
+import Mood from "./Moods";
 import ScrollingEmojis from "../ScrollingEmojis";
 import Modal from "react-modal";
 import moodOverright from "@/database/moodOverright";
