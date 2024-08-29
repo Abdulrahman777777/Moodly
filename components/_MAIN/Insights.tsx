@@ -105,7 +105,7 @@ const Insights = ({
     return (
       <>
         <ScrollingEmojis />
-        <section className="w-screen backdrop-blur-md opacity-15 min-h-screen flex mobile:justify-around flex-wrap items-center">
+        <section className="w-screen backdrop-blur-md opacity-15 z-50 min-h-screen flex mobile:justify-around flex-wrap items-center">
           <nav className="w-screen self-start flex justify-start items-center tablet:justify-center ">
             <motion.button
               onClick={() => setInsight(false)}
