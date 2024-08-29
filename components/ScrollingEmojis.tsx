@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const RandomX = () => {
-  const Random = (Math.random() + Math.random()) / 2;
-  return ((Random - 0) * (1280 - 0)) / (1 - 0);
-};
-const RandomY = () => {
-  const Random = Math.random();
-  return ((Random - 0) * (window.innerHeight - 0)) / (1 - 0);
-};
-
-function ScrollingEmojis({ delay }: { delay: number }) {
+function ScrollingEmojis() {
   const Arr = [];
-  for (let index = 0; index < 25; index++) {
+  for (let index = 0; index < 15; index++) {
     const Random = Math.random();
     if (Random < 0.05) {
       Arr.push("😁");
@@ -57,23 +48,25 @@ function ScrollingEmojis({ delay }: { delay: number }) {
     }
   }
   return (
-    <motion.div className=" right-1/2 emojis absolute z-10 w-screen  text-center h-screen">
+    <motion.div className=" flex fixed justify-center items-center overflow-hidden  -z-50 w-screen text-center h-screen">
       {Arr.map((mood, index) => {
-        let x = RandomX();
-        let y = RandomY();
         return (
           <motion.h3
-            key={index}
-            initial={{ x: x * 2, y: y }}
+            initial={{ y: (window.innerHeight / 2) * -1 - index - 40 }}
             animate={{
-              y: [(-window.innerHeight * 10 * index) / 10 - 100, y + 550],
+              y: [
+                (window.innerHeight / 2) * -1 - index - 40,
+                (window.innerHeight / 2) * +1 +
+                  Math.abs(+Math.random() * 100 - 120 + 40),
+              ],
             }}
             transition={{
-              duration: 10 + index * 0.05,
+              duration: 5,
               repeat: Infinity,
-              ease: "circOut",
-              delay: delay,
+              ease: "easeIn",
+              delay: +1 * Math.random() + Math.random() * 10,
             }}
+            key={index}
             className="text-3xl pointer-events-none "
           >
             {mood}

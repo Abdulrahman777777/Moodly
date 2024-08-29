@@ -1,4 +1,4 @@
-import moods from "@/database/moods";
+import moods, { dateFormatter, dateFormatter2 } from "@/database/moods";
 import React from "react";
 
 const Mood = ({
@@ -8,10 +8,8 @@ const Mood = ({
   index,
   email,
   setAlert,
-  alertState,
   setText,
   setEmoji,
-  key,
   setIndex,
 }: {
   setMoodState: Function;
@@ -38,7 +36,7 @@ const Mood = ({
         moods(email, emoji, index, setAlert, text, setMoodState);
         setEmoji(emoji);
         setText(text);
-        setIndex(index);
+        setIndex(index - 1);
       }}
       className="z-20 w-64 hover:backdrop-blur-sm mobile:w-screen h-36 flex flex-col justify-center items-center  align-middle hover:bg-slate-400 hover:border-black hover:bg-opacity-15 rounded-xl border-2  hover: border-transparent   cursor-pointer"
     >

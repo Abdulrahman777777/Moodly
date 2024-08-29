@@ -12,6 +12,7 @@ import Link from "next/link";
 import ScrollingEmojis from "@/components/ScrollingEmojis";
 import { useState } from "react";
 import AppUI from "../components/App";
+import LoginForm from "@/components/LoginForm";
 
 // Define Firebase configuration interface
 interface FirebaseConfig {
@@ -46,8 +47,7 @@ export default function Home() {
   if (!authing) {
     return (
       <main className="-z-10 overflow-hidden w-screen h-screen">
-        <ScrollingEmojis delay={0} />
-        <ScrollingEmojis delay={5} />
+        <ScrollingEmojis />
         <div className="w-screen h-screen cont flex items-center justify-center z-20 bg-transparent absolute">
           <div className="text gap-8 h-screen flex flex-col justify-center items-center">
             <h1 className="font-sans text-8xl text-center">Moodly!</h1>
@@ -57,7 +57,7 @@ export default function Home() {
             <div className="button flex justify-center">
               <button
                 type="button"
-                className="align-middle hover:bg-slate-400 hover:border-black hover:bg-opacity-65 bg-opacity-65 rounded-xl border-2 w-1/2 hover:border-transparent h-10 dark:hover:bg-gray-900 dark:hover:border-gray-600"
+                className="align-middle hover:bg-slate-400 hover:border-black hover:bg-opacity-65 bg-opacity-65 rounded-xl border-2 w-32 hover:border-transparent h-10 dark:hover:bg-gray-900 dark:hover:border-gray-600"
                 onClick={() => setAuthing(true)}
               >
                 Login

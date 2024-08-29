@@ -43,7 +43,7 @@ export const userAddition = async (
   creation: number,
   name: string
 ) => {
-  const dir = await getDoc(doc(db, `userStuff/${name}`))
+  const dir = await getDoc(doc(db, `userStuff/${email}`))
     .then((data) => {
       if (!data.exists()) {
         setDoc(doc(db, `userStuff`, email), {
@@ -56,7 +56,5 @@ export const userAddition = async (
       } else {
       }
     })
-    .catch((err) => {
-      console.log(err);
-    });
+    .catch((err) => {});
 };

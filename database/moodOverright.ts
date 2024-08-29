@@ -27,29 +27,20 @@ const db = getFirestore(app);
 const moodOverright = async (
   email: string,
   emoji: string,
-  index: number | null,
-  alertState: boolean | null
+  index: number,
+  text: string
 ) => {
   const date = dateFormatter();
-  switch (alertState) {
-    case true:
-      setDoc(
-        doc(db, `${email}/${date}`),
-        {
-          index,
-          emoji,
-          text: MoodArr[index as number].text,
-          date: dateFormatter(),
-        },
-        { merge: true }
-      );
-      break;
-
-    case false:
-      break;
-    default:
-      break;
-  }
+  setDoc(
+    doc(db, `${email}/${date}`),
+    {
+      index: index,
+      emoji,
+      text: text,
+      date: dateFormatter(),
+    },
+    { merge: true }
+  );
 };
 
 export default moodOverright;

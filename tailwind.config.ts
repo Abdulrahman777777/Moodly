@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     screens: {
       mobile: { max: "508px" },
+      tablet: { max: "730px" },
     },
     extend: {
       backgroundImage: {
