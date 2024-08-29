@@ -1,12 +1,12 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 function ScrollingEmojis() {
   const [windowHieght, setWindowHieght] = useState(400);
   useEffect(() => {
-    if (window !== undefined) {
-      setWindowHieght(window.innerHeight);
-    }
+    setWindowHieght(window.innerHeight);
   }, []);
   const Arr = [];
   for (let index = 0; index < 15; index++) {
