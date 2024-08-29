@@ -101,7 +101,7 @@ function LoginForm({ setEmail, setAuthed }: LoginFormProps) {
           <div className="submit w-screen flex justify-center items-center ">
             <button
               className="w-56 bg-amber-400 dark:bg-amber-500 text-white rounded-lg  "
-              onClick={() => {
+              onClick={async () => {
                 if (!validateEmail(emailInput.current.value)) {
                   alert("Please enter a valid email");
                 } else {
@@ -126,20 +126,21 @@ function LoginForm({ setEmail, setAuthed }: LoginFormProps) {
               animate(scope.current, { rotate: 0 });
             }}
             className=" flex justify-around items-center bg-amber-400 dark:bg-amber-500 text-white w-56 p-4 rounded-xl "
-            onClick={() => {
-              signInWithPopup(auth, provider)
-                .then((result) => {
-                  userAddition(
-                    result.user.uid,
-                    result.user.email as string,
-                    result.user.displayName as string,
-                    Date.now(),
-                    result.user.displayName as string
-                  );
-                  setEmail(result.user.email);
-                  setAuthed(true);
-                })
-                .catch((er) => {});
+            onClick={async () => {
+              await animate(
+                scope.current,
+                { rotate: [-90, 90, -180, 180, -360, 360] },
+                { duration: 2 }
+              );
+              signInWithPopup(auth, provider).then((result) => {
+                userAddition(
+                  result.user.uid,
+                  result.user.email as string,
+                  result.user.displayName as string,
+                  Date.now(),
+                  result.user.displayName as string
+                );
+              });
             }}
           >
             {" "}

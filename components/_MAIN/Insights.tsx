@@ -108,7 +108,10 @@ const Insights = ({
         <section className="w-screen backdrop-blur-md sticky bg-opacity-15 z-50 min-h-screen flex mobile:justify-around flex-wrap items-center">
           <nav className="w-screen self-start flex justify-start items-center tablet:justify-center ">
             <motion.button
-              onClick={() => setInsight(false)}
+              onClick={async () => {
+                await animate(scope.current, { x: -20 });
+                setInsight(false);
+              }}
               onHoverStart={() => animate(scope.current, { x: -20 })}
               onHoverEnd={() => animate(scope.current, { x: 0 })}
               className=" p-4 bg-amber-500  rounded-lg hover:bg-amber-600 w-64 h-10 flex justify-end items-center"

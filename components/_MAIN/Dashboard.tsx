@@ -46,7 +46,10 @@ function Dashboard({ email }: { email: string }) {
               }/10`}</text>
             </h2>
             <motion.button
-              onClick={() => setInsight(true)}
+              onClick={async () => {
+                await animate(scope.current, { x: -20 });
+                setInsight(true);
+              }}
               onHoverStart={() => animate(scope.current, { x: 20 })}
               onHoverEnd={() => animate(scope.current, { x: 0 })}
               className="button mobile:mb-3 bg-amber-500 rounded-lg hover:bg-amber-600 w-56 h-10 flex justify-evenly items-center"
