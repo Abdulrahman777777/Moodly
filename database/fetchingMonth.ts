@@ -52,7 +52,7 @@ export const fetchingMonths = async (email: string) => {
     sumInd += x;
   });
   const avgInd = Math.round(sumInd / indArr.length);
-  const mood = MoodArr[avgInd - 1];
+  const mood = MoodArr[avgInd];
   const per = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   indArr.map((x) => {
     per[x]++;

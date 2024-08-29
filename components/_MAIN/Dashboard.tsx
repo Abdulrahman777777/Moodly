@@ -41,7 +41,9 @@ function Dashboard({ email }: { email: string }) {
             </h1>
             <h2 className="mb-4 text-center">
               You{"'"}re average rating is{" "}
-              <text className="text-amber-500 font-bold">{`0${data.avgInd}/10`}</text>
+              <text className="text-amber-500 font-bold">{`0${
+                data.avgInd + 1
+              }/10`}</text>
             </h2>
             <motion.button
               onClick={() => setInsight(true)}
