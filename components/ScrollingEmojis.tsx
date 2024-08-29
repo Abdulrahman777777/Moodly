@@ -44,13 +44,14 @@ function ScrollingEmojis() {
       {Arr.map((mood, index) => {
         return (
           <motion.h3
-            initial={{ y: (windowHieght / 2) * -1 - index - 40 }}
+            initial={{ y: (windowHieght / 2) * -1 - index - 40, opacity: 0.3 }}
             animate={{
               y: [
                 (windowHieght / 2) * -1 - index - 40,
                 (windowHieght / 2) * +1 +
                   Math.abs(+Math.random() * 100 - 120 + 40),
               ],
+              opacity: 1,
             }}
             transition={{
               duration: 5,
