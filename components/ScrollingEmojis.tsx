@@ -6,51 +6,39 @@ function ScrollingEmojis() {
   useEffect(() => {
     setWindowHieght(window.innerHeight);
   }, []);
-  const Arr = [];
-  for (let index = 0; index < 15; index++) {
-    const Random = Math.random();
-    if (Random < 0.05) {
-      Arr.push("😁");
-    } else if (Random >= 0.05 && Random < 0.1) {
-      Arr.push("😔");
-    } else if (Random >= 0.1 && Random < 0.15) {
-      Arr.push("😢");
-    } else if (Random >= 0.15 && Random < 0.2) {
-      Arr.push("😐");
-    } else if (Random >= 0.2 && Random < 0.25) {
-      Arr.push("😕");
-    } else if (Random >= 0.25 && Random < 0.3) {
-      Arr.push("☹️");
-    } else if (Random >= 0.3 && Random < 0.35) {
-      Arr.push("😂");
-    } else if (Random >= 0.35 && Random < 0.4) {
-      Arr.push("😠");
-    } else if (Random >= 0.4 && Random < 0.45) {
-      Arr.push("😡");
-    } else if (Random >= 0.45 && Random < 0.5) {
-      Arr.push("🤬");
-    } else if (Random >= 0.5 && Random < 0.55) {
-      Arr.push("😎");
-    } else if (Random >= 0.55 && Random < 0.6) {
-      Arr.push("😱");
-    } else if (Random >= 0.6 && Random < 0.65) {
-      Arr.push("🥹");
-    } else if (Random >= 0.65 && Random < 0.7) {
-      Arr.push("💔");
-    } else if (Random >= 0.7 && Random < 0.75) {
-      Arr.push("🥰");
-    } else if (Random >= 0.75 && Random < 0.8) {
-      Arr.push("😐");
-    } else if (Random >= 0.8 && Random < 0.85) {
-      Arr.push("🤒");
-    } else if (Random >= 0.85 && Random < 0.9) {
-      Arr.push("🤧");
-    } else if (Random >= 0.9 && Random < 0.95) {
-      Arr.push("😎");
-    } else if (Random >= 0.95 && Random <= 1) {
-      Arr.push("🥹");
-    }
-  }
+  const Arr = [
+    "😊", // Smiling face with smiling eyes
+    "😂", // Face with tears of joy
+    "😢", // Crying face
+    "😠", // Angry face
+    "😍", // Heart eyes
+    "😱", // Face screaming in fear
+    "😎", // Smiling face with sunglasses
+    "🤔", // Thinking face
+    "😴", // Sleeping face
+    "😲", // Astonished face
+    "😅", // Smiling face with sweat
+    "😡", // Pouting face
+    "😜", // Face with stuck-out tongue and winking eye
+    "😇", // Smiling face with halo
+    "🤯", // Exploding head
+    "😈", // Smiling face with horns
+    "🥺", // Pleading face
+    "🤗", // Hugging face
+    "😩", // Weary face
+    "😤", // Face with steam from nose
+    "🤤", // Drooling face
+    "😶", // Face without mouth
+    "🥳", // Partying face
+    "😮", // Face with open mouth
+    "😑", // Expressionless face
+    "🥵", // Hot face
+    "🥶", // Cold face
+    "😰", // Anxious face with sweat
+    "🤥", // Lying face
+    "🤫", // Shushing face
+    "🙄", // Face with rolling eyes
+  ];
   return (
     <motion.div className=" flex fixed justify-center items-center overflow-hidden  -z-50 w-screen text-center h-screen">
       {Arr.map((mood, index) => {
