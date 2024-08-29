@@ -27,7 +27,7 @@ function Dashboard({ email }: { email: string }) {
     return (
       <>
         <ScrollingEmojis />
-        <section className="flex backdrop-blur-md opacity-15 flex-wrap justify-around w-screen min-h-screen items-center z-50">
+        <section className="flex backdrop-blur-md bg-opacity-15 sticky flex-wrap justify-around w-screen min-h-screen items-center z-50">
           <div className="text flex justify-center flex-col items-center gap-2 mobile:mt-4">
             <h1 className="text-2xl text-center mobile:p-3">
               On average you{"'"}ve been{" "}
