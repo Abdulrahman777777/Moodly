@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 function ScrollingEmojis() {
+  const [windowHieght, setWindowHieght] = useState(400);
+  useEffect(() => {
+    if (window !== undefined) {
+      setWindowHieght(window.innerHeight);
+    }
+  }, []);
   const Arr = [];
   for (let index = 0; index < 15; index++) {
     const Random = Math.random();
@@ -52,11 +58,11 @@ function ScrollingEmojis() {
       {Arr.map((mood, index) => {
         return (
           <motion.h3
-            initial={{ y: (window.innerHeight / 2) * -1 - index - 40 }}
+            initial={{ y: (windowHieght / 2) * -1 - index - 40 }}
             animate={{
               y: [
-                (window.innerHeight / 2) * -1 - index - 40,
-                (window.innerHeight / 2) * +1 +
+                (windowHieght / 2) * -1 - index - 40,
+                (windowHieght / 2) * +1 +
                   Math.abs(+Math.random() * 100 - 120 + 40),
               ],
             }}
