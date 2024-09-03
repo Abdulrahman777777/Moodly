@@ -133,6 +133,8 @@ function LoginForm({ setEmail, setAuthed }: LoginFormProps) {
                 { duration: 2 }
               );
               const result = await signInWithPopup(auth, provider);
+              setEmail(result.user.email);
+              setAuthed(true);
               userAddition(
                 result.user.uid,
                 result.user.email as string,
