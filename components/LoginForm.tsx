@@ -132,7 +132,7 @@ function LoginForm({ setEmail, setAuthed }: LoginFormProps) {
                 { rotate: [-90, 90, -180, 180, -360, 360] },
                 { duration: 2 }
               );
-              signInWithPopup(auth, provider).then((result) => {
+              await signInWithPopup(auth, provider).then((result) => {
                 userAddition(
                   result.user.uid,
                   result.user.email as string,
